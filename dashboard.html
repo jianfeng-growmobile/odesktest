@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="stylesheets/styles.css">
   <script type="text/javascript" src="javascripts/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" src="javascripts/bootstrap-tab.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -24,16 +25,19 @@
             <h2>New campaign</h2>
             <div class="tabbable columns">
                 <ul id="campaignWizardTab" class="nav nav-tabs" data-step="7">
-                    <li ><a id="t_basic" data-step="1">Campaign</a></li>
-                    <li ><a id="t_partners" data-step="2">Traffic Sources</a></li>
-                    <li ><a id="t_bids" data-step="3">Bids</a></li>
-                    <li ><a id="t_budget" data-step="4">Budget</a></li>
-                    <li ><a id="t_targeting" data-step="5">Targeting</a></li>
-                    <li ><a id="t_creative" data-step="6">Creative</a></li>
-                    <li class='active'><a id="t_summary" data-step="7">Summary</a></li>
+                    <li ><a id="t_basic" href='#declarations' data-step="1">Campaign</a></li>
+                    <li ><a id="t_partners" href='#traffic' data-step="2">Traffic Sources</a></li>
+                    <li ><a id="t_bids" href='#bids' data-step="3">Bids</a></li>
+                    <li ><a id="t_budget" href='#budget' data-step="4">Budget</a></li>
+                    <li ><a id="t_targeting" href='#targeting' data-step="5">Targeting</a></li>
+                    <li ><a id="t_creative" href='#creative' data-step="6">Creative</a></li>
+                    <li class='active'><a id="t_summary" href='#summary' data-step="7">Summary</a></li>
                 </ul>
                 <div id="wizardTabContent" class="tab-content">
-                    <div class="tab-pane fade active in" id="declarations">
+                  <div class="tab-pane" id="declarations">
+                        <h3>Campaign basic info</h3>
+                    </div>
+                    <div class="tab-pane fade active in" id="summary">
                         <h3>Campaign Summary</h3>
                         <form accept-charset="UTF-8" action="/campaigns/wizard/7" data-remote="true" method="post">
                           <div style="margin:0;padding:0;display:inline"></div>
@@ -43,6 +47,21 @@
                           <input id="next_step" name="next_step" type="hidden" value="0" />
                         </form>
                     </div>
+                    <div class="tab-pane" id="traffic">
+                        <h3>Traffic Sources</h3>
+                    </div>
+                    <div class="tab-pane" id="bids">
+                        <h3>Bid Price</h3>
+                    </div>
+                    <div class="tab-pane" id="budget">
+                        <h3>This is Budget</h3>
+                    </div>
+                    <div class="tab-pane" id="targeting">
+                        <h3>This is target</h3>
+                    </div>
+                    <div class="tab-pane" id="creative">
+                        <h3>This is creative</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -50,28 +69,12 @@
         </div>
     </div>
   </div>
-
-  <div id="footer-placeholder"></div>
 </div>
-
-<div id="footer">
-  <div class="container">
-    <div class="footer_nav">
-      <ul class="menu">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Terms of Service</a></li>
-        <li><a href="#">Privacy</a></li>
-        <li><a href="#">Support</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
 <script type="text/javascript">
-  $("#sidebar .main-menu_expand").click(function() {
-    $("#sidebar").toggleClass('collapsed');
-  });
+$('#campaignWizardTab a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+})
 </script>
-
 </body>
 </html>
