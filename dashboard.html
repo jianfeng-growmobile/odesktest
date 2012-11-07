@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>GrowMobile</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <script type="text/javascript" src="javascripts/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+<div id="wrapper">
+
+  <div id="body">
+    <div class="container">
+      <div id="content">
+<!-- begin of the campaign wizard -->
+        <div class="body">
+            <h2>New campaign</h2>
+            <div class="tabbable columns">
+                <ul id="campaignWizardTab" class="nav nav-tabs" data-step="7">
+                    <li ><a id="t_basic" data-step="1">Campaign</a></li>
+                    <li ><a id="t_partners" data-step="2">Traffic Sources</a></li>
+                    <li ><a id="t_bids" data-step="3">Bids</a></li>
+                    <li ><a id="t_budget" data-step="4">Budget</a></li>
+                    <li ><a id="t_targeting" data-step="5">Targeting</a></li>
+                    <li ><a id="t_creative" data-step="6">Creative</a></li>
+                    <li class='active'><a id="t_summary" data-step="7">Summary</a></li>
+                </ul>
+                <div id="wizardTabContent" class="tab-content">
+                    <div class="tab-pane fade active in" id="declarations">
+                        <h3>Campaign Summary</h3>
+                        <form accept-charset="UTF-8" action="/campaigns/wizard/7" data-remote="true" method="post">
+                          <div style="margin:0;padding:0;display:inline"></div>
+                          <p>this is the content of the tab</p>
+                          <input class="btn btn-primary" name="commit" type="submit" value="Submit for review" />
+                          <input id="current_step" name="current_step" type="hidden" value="7" />
+                          <input id="next_step" name="next_step" type="hidden" value="0" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--end of campaign wizard-->
+        </div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+</div>
+
+<div id="footer">
+  <div class="container">
+    <div class="footer_nav">
+      <ul class="menu">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $("#sidebar .main-menu_expand").click(function() {
+    $("#sidebar").toggleClass('collapsed');
+  });
+</script>
+
+</body>
+</html>
